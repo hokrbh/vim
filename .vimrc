@@ -34,7 +34,10 @@ endif
 " according to the detected filetype.
 if has("autocmd")
   filetype plugin indent on
+  autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
+  autocmd FileType c setlocal expandtab shiftwidth=4 softtabstop=4
 endif
+set autoindent
 
 " The following are commented out as they cause vim to behave a lot
 " differently from regular Vi. They are highly recommended though.
@@ -42,7 +45,6 @@ set showcmd		" Show (partial) command in status line.
 set showmatch		" Show matching brackets.
 "set ignorecase		" Do case insensitive matching
 set smartcase		" Do smart case matching
-set incsearch		" Incremental search
 set autowrite		" Automatically save before commands like :next and :make
 "set hidden		" Hide buffers when they are abandoned
 set mouse=a		" Enable mouse usage (all modes)
@@ -62,9 +64,9 @@ let mapleader = "\<Space>"
 "set spell
 "set spellfile=$HOME/vim/en.utf-8.add
 
-" Turn on VIM auto changing directory
-set autochdir
-
-" Turn on line numbering by default
-set number
-
+set autochdir " Turn on VIM auto changing directory
+set number " Turn on line numbering by default
+set hlsearch " Highlight matches
+set incsearch " Modern (wrapping) search
+set history=500 " Long undo history
+set antialias " Pretty fonts

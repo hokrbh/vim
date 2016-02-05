@@ -32,30 +32,39 @@ endif
 
 " Uncomment the following to have Vim load indentation rules and plugins
 " according to the detected filetype.
-"if has("autocmd")
-"  filetype plugin indent on
-"endif
+if has("autocmd")
+  filetype plugin indent on
+endif
 
 " The following are commented out as they cause vim to behave a lot
 " differently from regular Vi. They are highly recommended though.
-"set showcmd		" Show (partial) command in status line.
-"set showmatch		" Show matching brackets.
+set showcmd		" Show (partial) command in status line.
+set showmatch		" Show matching brackets.
 "set ignorecase		" Do case insensitive matching
-"set smartcase		" Do smart case matching
-"set incsearch		" Incremental search
-"set autowrite		" Automatically save before commands like :next and :make
+set smartcase		" Do smart case matching
+set incsearch		" Incremental search
+set autowrite		" Automatically save before commands like :next and :make
 "set hidden		" Hide buffers when they are abandoned
-"set mouse=a		" Enable mouse usage (all modes)
+set mouse=a		" Enable mouse usage (all modes)
 
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
 
+" Maps the key combination jk to the escape key for faster exit of modes 
 inoremap jk <ESC>
+
 let mapleader = "\<Space>"
-filetype plugin indent on
-set encoding=utf-8
+
+" Spell checking stuff
+"set encoding=utf-8
 "set spell
 "set spellfile=$HOME/vim/en.utf-8.add
+
+" Turn on VIM auto changing directory
 set autochdir
+
+" Turn on line numbering by default
+set number
+

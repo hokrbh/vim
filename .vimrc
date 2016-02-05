@@ -56,5 +56,6 @@ inoremap jk <ESC>
 let mapleader = "\<Space>"
 filetype plugin indent on
 set encoding=utf-8
-set spell
-set spellfile=$HOME/vim/en.utf-8.add
+"set spell
+"set spellfile=$HOME/vim/en.utf-8.add
+set autochdir

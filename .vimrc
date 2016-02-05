@@ -30,12 +30,17 @@ endif
 "  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 "endif
 
+" Default tab settings
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+
 " Uncomment the following to have Vim load indentation rules and plugins
 " according to the detected filetype.
 if has("autocmd")
   filetype plugin indent on
   autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
-  autocmd FileType c setlocal expandtab shiftwidth=4 softtabstop=4
+  autocmd FileType c setlocal expandtab shiftwidth=2 softtabstop=2
 endif
 set autoindent
 
